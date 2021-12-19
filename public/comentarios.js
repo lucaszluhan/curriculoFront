@@ -1,0 +1,59 @@
+let api = axios.create({
+   baseURL: `http://localhost:9191`,
+});
+
+createComentario = () => {
+   if (document.querySelector('#nomeInput').value && document.querySelector('#comentarioInput').value) {
+      api.post('/comentarios', {
+         nome: document.querySelector('#nomeInput').value,
+         comentario: document.querySelector('#comentarioInput').value,
+      })
+         .then((result) => {
+            document.querySelector('#nomeInput').value = '';
+            document.querySelector('#comentarioInput').value = '';
+            document.querySelector('#divComentarios').innerHTML = '';
+            alert(result.data.msg);
+            let comentarios = getComentarios();
+            setComentarios(comentarios);
+         })
+         .catch((error) => {
+            console.log(error.data.msg);
+         });
+   } else {
+      alert('Preencha todos os campos.');
+   }
+};
+
+setCreateComentarioButton = () => {
+   let btn = document.querySelector('#createComentario');
+   btn.setAttribute('onclick', 'createComentario()');
+};
+setCreateComentarioButton();
+
+setComentarios = async (getComentarios) => {
+   let comentarios = await getComentarios;
+   comentarios = comentarios.data.data;
+   comentarios.reverse();
+   comentarios.splice(3);
+   for (let comentario of comentarios) {
+      let div = document.createElement('div');
+      div.setAttribute('class', 'm-5 p-5 h-25 w-25 d-flex flex-column align-items-center text-wrap justify-content-evenly');
+      let name = document.createElement('h3');
+      name.setAttribute('class', 'fw-bold text-wrap w-100 mb-5');
+      name.innerText = comentario.nome;
+      div.appendChild(name);
+      let comentarioTexto = document.createElement('p');
+      comentarioTexto.setAttribute('class', 'fs-4 text-wrap w-100');
+      comentarioTexto.innerText = comentario.comentario;
+      div.appendChild(comentarioTexto);
+      let divComentarios = document.querySelector('#divComentarios');
+      divComentarios.appendChild(div);
+   }
+};
+
+let getComentarios = async () => {
+   return await api.get('/comentarios');
+};
+
+let comentarios = getComentarios();
+setComentarios(comentarios);

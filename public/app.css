@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap');
+
+* {
+   font-family: 'Fuzzy Bubbles', roboto, sans-serif;
+}
+
+body header {
+   height: 10%;
+}
+
+#profilePhoto {
+   background: no-repeat center url('./img/foto_perfil.jpg');
+   background-size: cover;
+}
+
+#loginImg {
+   background: no-repeat center url('./img/login.jpeg');
+   background-size: cover;
+}
+
+#recadosImg {
+   background: no-repeat url('./img/recados.jpg');
+   background-size: contain;
+}
+
+#navNovoComentario {
+   height: 10%;
+}

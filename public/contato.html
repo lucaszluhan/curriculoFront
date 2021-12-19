@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Lucas Zluhan</title>
+      <!-- bootstrap -->
+      <link
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+         rel="stylesheet"
+         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+         crossorigin="anonymous"
+      />
+      <!-- arquivo css -->
+      <link rel="stylesheet" href="app.css" />
+   </head>
+   <body class="container-fluid d-flex row vh-100 g-0 overflow-hidden bg-black bg-gradient">
+      <header class="d-flex w-100 justify-content-between bg-warning bg-gradient border-bottom border-2">
+         <h1 class="w-50 mb-0 d-flex justify-content-center align-items-end text-black fw-bold display-3">Lucas Zluhan</h1>
+         <nav class="d-flex w-50 justify-content-end align-items-end">
+            <a href="./index.html" class="text-decoration-none text-black ps-5 pe-1 py-2 fs-5">SOBRE</a>
+            <span class="py-2">/</span>
+            <a href="./skills.html" class="text-decoration-none text-black px-1 py-2 fs-5">SKILLS</a>
+            <span class="py-2">/</span>
+            <a href="./projetos.html" class="text-decoration-none text-black px-1 py-2 fs-5">PROJETOS</a>
+            <span class="py-2">/</span>
+            <a href="./comentarios.html" class="text-decoration-none text-black px-1 py-2 fs-5">COMENTÁRIOS</a>
+            <span class="py-2">/</span>
+            <a href="./contato.html" class="text-decoration-none text-black ps-1 pe-5 py-2 fs-4 fw-bold text-decoration-underline">CONTATO</a>
+         </nav>
+      </header>
+      <main class="d-flex flex-column w-100 h-100 align-items-center pt-5 mt-5">
+         <p class="text-white fs-2 pb-5">Solicito que envie seus dados e entrarei em contato o mais breve.</p>
+         <form action="" class="w-25 d-flex flex-column align-items-center justify-content-evenly h-50 border-start border-end">
+            <div class="form-floating w-75">
+               <input type="text" class="form-control" maxlength="50" id="nomeInput" required placeholder="Insira seu nome aqui." />
+               <label for="nomeInput">Nome</label>
+            </div>
+            <div class="form-floating w-75">
+               <input type="tel" maxlength="13" class="form-control" id="telefoneInput" required placeholder="Insira seu telefone aqui: xx-xxxxxxxxx"" />
+               <label for="telefoneInput">Telefone: xx-xxxxx-xxxx</label>
+            </div>
+            <div class="form-floating w-75">
+               <input type="email" class="form-control" maxlength="50" id="emailInput" required placeholder="Insira seu email aqui." />
+               <label for="emailInput">Email</label>
+            </div>
+            <div class="form-floating w-75">
+               <input type="text" class="form-control" maxlength="30" id="assuntoInput" required placeholder="Insira o assunto aqui." />
+               <label for="emailInput">Assunto</label>
+            </div>
+         </form>
+         <button id="createContato" type="submit" onsubmit="return false" class="btn btn-lg btn-warning border border-3 text-dark fw-bold">Enviar</button>
+      </main>
+      <!-- scripts -->
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <script
+         src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+         crossorigin="anonymous"
+      ></script>
+      <script src="./contato.js"></script>
+   </body>
+</html>
