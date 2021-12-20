@@ -13,8 +13,7 @@ createComentario = () => {
             document.querySelector('#comentarioInput').value = '';
             document.querySelector('#divComentarios').innerHTML = '';
             alert(result.data.msg);
-            let comentarios = getComentarios();
-            setComentarios(comentarios);
+            setComentarios();
          })
          .catch((error) => {
             console.log(error);
@@ -30,8 +29,8 @@ setCreateComentarioButton = () => {
 };
 setCreateComentarioButton();
 
-setComentarios = async (getComentarios) => {
-   let comentarios = await getComentarios;
+setComentarios = async () => {
+   let comentarios = await getComentarios();
    comentarios = comentarios.data.data;
    comentarios.reverse();
    comentarios.splice(3);
@@ -54,6 +53,3 @@ setComentarios = async (getComentarios) => {
 let getComentarios = async () => {
    return await api.get('/comentarios');
 };
-
-let comentarios = getComentarios();
-setComentarios(comentarios);
