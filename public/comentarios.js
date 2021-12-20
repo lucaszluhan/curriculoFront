@@ -29,13 +29,13 @@ setCreateComentarioButton = () => {
 };
 setCreateComentarioButton();
 
-let getComentarios = async () => {
+getComentarios = async () => {
    let comentarios = await api.get('/comentarios');
    return comentarios;
 };
 
-setComentarios = async () => {
-   let comentarios = await getComentarios();
+setComentarios = () => {
+   let comentarios = getComentarios();
    comentarios = comentarios.data.data;
    comentarios.reverse();
    comentarios.splice(3);
