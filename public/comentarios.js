@@ -32,10 +32,9 @@ setCreateComentarioButton();
 
 let comentarios;
 
-getComentarios = () => {
-   let comentariosAPI = api.get('/comentarios');
+getComentarios = async () => {
+   let comentariosAPI = await api.get('/comentarios');
    comentarios = comentariosAPI;
-   console.log(comentariosAPI);
 };
 getComentarios();
 
