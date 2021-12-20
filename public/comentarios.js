@@ -30,7 +30,8 @@ setCreateComentarioButton = () => {
 setCreateComentarioButton();
 
 let getComentarios = async () => {
-   return await api.get('/comentarios');
+   let comentarios = await api.get('/comentarios');
+   return comentarios;
 };
 
 setComentarios = async () => {
