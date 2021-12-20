@@ -34,7 +34,7 @@ let comentarios;
 
 getComentarios = async () => {
    let comentariosAPI = await api.get('/comentarios');
-   comentarios = comentariosAPI.data;
+   comentarios = comentariosAPI.data.data;
    console.log({ comentarios });
    console.log({ comentariosAPI });
 };
@@ -42,7 +42,7 @@ getComentarios();
 
 setComentarios = async () => {
    try {
-      let comentariosSet = comentarios.data;
+      let comentariosSet = comentarios;
       comentariosSet.reverse();
       comentariosSet.splice(3);
       for (let comentario of comentariosSet) {
