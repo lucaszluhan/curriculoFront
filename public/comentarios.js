@@ -29,14 +29,9 @@ setCreateComentarioButton = () => {
 };
 setCreateComentarioButton();
 
-getComentarios = async () => {
-   let comentarios = await api.get('/comentarios');
-   return comentarios;
-};
-
 setComentarios = async () => {
    try {
-      let comentarios = await getComentarios();
+      let comentarios = await api.get('comentarios');
       comentarios = comentarios.data.data;
       comentarios.reverse();
       comentarios.splice(3);
@@ -58,4 +53,4 @@ setComentarios = async () => {
       console.log(error);
    }
 };
-setComentarios().then();
+setComentarios();
