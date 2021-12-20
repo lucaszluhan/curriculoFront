@@ -17,7 +17,7 @@ createComentario = () => {
             setComentarios(comentarios);
          })
          .catch((error) => {
-            console.log(error.data.msg);
+            console.log(error);
          });
    } else {
       alert('Preencha todos os campos.');

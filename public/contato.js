@@ -4,7 +4,7 @@ let api = axios.create({
 
 createContato = () => {
    if (document.querySelector('#nomeInput').value && document.querySelector('#telefoneInput').value && document.querySelector('#emailInput').value && document.querySelector('#assuntoInput').value) {
-      api.post('contatos', {
+      api.post('/contatos', {
          nome: document.querySelector('#nomeInput').value,
          telefone: document.querySelector('#telefoneInput').value,
          email: document.querySelector('#emailInput').value,
