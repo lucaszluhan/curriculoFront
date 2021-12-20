@@ -35,23 +35,27 @@ getComentarios = async () => {
 };
 
 setComentarios = async () => {
-   let comentarios = await getComentarios();
-   comentarios = comentarios.data.data;
-   comentarios.reverse();
-   comentarios.splice(3);
-   for (let comentario of comentarios) {
-      let div = document.createElement('div');
-      div.setAttribute('class', 'm-5 p-5 h-25 w-25 d-flex flex-column align-items-center text-wrap justify-content-evenly');
-      let name = document.createElement('h3');
-      name.setAttribute('class', 'fw-bold text-wrap w-100 mb-5');
-      name.innerText = comentario.nome;
-      div.appendChild(name);
-      let comentarioTexto = document.createElement('p');
-      comentarioTexto.setAttribute('class', 'fs-4 text-wrap w-100');
-      comentarioTexto.innerText = comentario.comentario;
-      div.appendChild(comentarioTexto);
-      let divComentarios = document.querySelector('#divComentarios');
-      divComentarios.appendChild(div);
+   try {
+      let comentarios = await getComentarios();
+      comentarios = comentarios.data.data;
+      comentarios.reverse();
+      comentarios.splice(3);
+      for (let comentario of comentarios) {
+         let div = document.createElement('div');
+         div.setAttribute('class', 'm-5 p-5 h-25 w-25 d-flex flex-column align-items-center text-wrap justify-content-evenly');
+         let name = document.createElement('h3');
+         name.setAttribute('class', 'fw-bold text-wrap w-100 mb-5');
+         name.innerText = comentario.nome;
+         div.appendChild(name);
+         let comentarioTexto = document.createElement('p');
+         comentarioTexto.setAttribute('class', 'fs-4 text-wrap w-100');
+         comentarioTexto.innerText = comentario.comentario;
+         div.appendChild(comentarioTexto);
+         let divComentarios = document.querySelector('#divComentarios');
+         divComentarios.appendChild(div);
+      }
+   } catch (error) {
+      console.log(error);
    }
 };
 setComentarios().then();
