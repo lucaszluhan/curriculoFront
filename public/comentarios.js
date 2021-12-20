@@ -1,5 +1,5 @@
 let api = axios.create({
-   baseURL: `http://localhost:9191`,
+   baseURL: `https://curriculo-lucaszluhan-back-db.herokuapp.com`,
 });
 
 createComentario = () => {
