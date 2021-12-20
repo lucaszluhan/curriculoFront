@@ -13,6 +13,7 @@ createComentario = () => {
             document.querySelector('#comentarioInput').value = '';
             document.querySelector('#divComentarios').innerHTML = '';
             alert(result.data.msg);
+            getComentarios();
             setComentarios();
          })
          .catch((error) => {
@@ -29,12 +30,20 @@ setCreateComentarioButton = () => {
 };
 setCreateComentarioButton();
 
+let comentarios;
+
+getComentarios = () => {
+   let comentariosAPI = api.get('/comentarios');
+   comentarios = comentariosAPI;
+   console.log(comentariosAPI);
+};
+getComentarios();
+
 setComentarios = async () => {
    try {
-      let comentarios = await api.get('comentarios');
-      comentarios = comentarios.data.data;
-      comentarios.reverse();
-      comentarios.splice(3);
+      let comentariosSet = comentarios.data.data;
+      comentariosSet.reverse();
+      comentariosSet.splice(3);
       for (let comentario of comentarios) {
          let div = document.createElement('div');
          div.setAttribute('class', 'm-5 p-5 h-25 w-25 d-flex flex-column align-items-center text-wrap justify-content-evenly');
@@ -53,4 +62,5 @@ setComentarios = async () => {
       console.log(error);
    }
 };
+
 setComentarios();
