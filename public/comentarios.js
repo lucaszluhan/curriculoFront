@@ -35,6 +35,8 @@ let comentarios;
 getComentarios = async () => {
    let comentariosAPI = await api.get('/comentarios');
    comentarios = comentariosAPI.data;
+   console.log({ comentarios });
+   console.log({ comentariosAPI });
 };
 getComentarios();
 
