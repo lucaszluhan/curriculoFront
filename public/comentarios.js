@@ -34,8 +34,8 @@ getComentarios = async () => {
    return comentarios;
 };
 
-setComentarios = () => {
-   let comentarios = getComentarios();
+setComentarios = async () => {
+   let comentarios = await getComentarios();
    comentarios = comentarios.data.data;
    comentarios.reverse();
    comentarios.splice(3);
@@ -54,4 +54,4 @@ setComentarios = () => {
       divComentarios.appendChild(div);
    }
 };
-setComentarios();
+setComentarios().then();
