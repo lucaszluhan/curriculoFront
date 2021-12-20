@@ -43,8 +43,8 @@ getComentarios();
 setComentarios = async () => {
    try {
       let comentariosSet = comentarios;
-      comentariosSet.reverse();
-      comentariosSet.splice(3);
+      // comentariosSet.reverse();
+      // comentariosSet.splice(3);
       for (let comentario of comentariosSet) {
          let div = document.createElement('div');
          div.setAttribute('class', 'm-5 p-5 h-25 w-25 d-flex flex-column align-items-center text-wrap justify-content-evenly');
