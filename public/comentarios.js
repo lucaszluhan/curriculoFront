@@ -49,6 +49,7 @@ setComentarios = async () => {
       divComentarios.appendChild(div);
    }
 };
+setComentarios();
 
 let getComentarios = async () => {
    return await api.get('/comentarios');
