@@ -30,19 +30,15 @@ setCreateComentarioButton = () => {
 };
 setCreateComentarioButton();
 
-let comentarios;
-
 getComentarios = async () => {
-   let comentariosAPI = await api.get('/comentarios');
-   comentarios = comentariosAPI.data.data;
-   console.log({ comentarios });
-   console.log({ comentariosAPI });
+   return await api.get('/comentarios');
 };
-getComentarios();
 
 setComentarios = async () => {
    try {
-      let comentariosSet = comentarios;
+      let comentariosSet = await getComentarios();
+      comentariosSet = comentariosSet.data.data;
+
       // comentariosSet.reverse();
       // comentariosSet.splice(3);
       for (let comentario of comentariosSet) {
