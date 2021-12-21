@@ -13,7 +13,6 @@ createComentario = () => {
             document.querySelector('#comentarioInput').value = '';
             document.querySelector('#divComentarios').innerHTML = '';
             alert(result.data.msg);
-            getComentarios();
             setComentarios();
          })
          .catch((error) => {
